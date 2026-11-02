@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Villa Soñada · Pasadía campestre</title>
+<meta name="description" content="Pasadía en La Villa Soñada: almuerzo, bebida, piscina y zona de juegos por $50.000. Km 5 vía Planeta Rica, después del Club Paraguay de golf.">
+<meta name="theme-color" content="#0f3b2a">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="media/icon-192.png">
+<meta property="og:title" content="La Villa Soñada · Pasadía $50.000">
+<meta property="og:description" content="Almuerzo, gaseosa o jugo, piscina y zona de juegos. Reserva por WhatsApp.">
+<meta property="og:image" content="media/piscina-cascada.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#0f3b2a; --verde2:#164f39; --oro:#d8a93b; --oro2:#f3d27a;
+  --azul:#1f7fd1; --agua:#4cc3ef; --crema:#fbf6ea; --tinta:#13241c;
+  --rojo:#e2502f; --amarillo:#f5c02a; --lima:#7ccf3a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Outfit,system-ui,sans-serif;background:var(--crema);color:var(--tinta);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.05}
+
+/* ---------- barra superior ---------- */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+  padding:12px 18px;transition:background .35s,box-shadow .35s}
+.top.solid{background:rgba(15,59,42,.94);backdrop-filter:blur(10px);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.brand{font-family:Fraunces,serif;font-weight:900;color:#fff;font-size:1.15rem;letter-spacing:.3px;text-decoration:none}
+.brand span{color:var(--oro2)}
+.lang{display:flex;border:1px solid rgba(255,255,255,.5);border-radius:99px;overflow:hidden}
+.lang button{background:none;border:0;color:#fff;font:600 .8rem Outfit;padding:7px 13px;cursor:pointer;letter-spacing:.5px}
+.lang button.on{background:var(--oro);color:var(--verde)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:zoom 18s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(10,40,28,.55) 60%,rgba(10,40,28,.97) 100%)}
+.hero-in{position:relative;z-index:2;padding:0 22px 42px;max-width:760px}
+.kicker{display:inline-block;font-weight:600;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--oro2);margin-bottom:12px}
+.hero h1{font-size:clamp(3rem,13vw,6.4rem);font-weight:900;letter-spacing:-1.5px}
+.hero h1 em{font-style:italic;color:var(--oro2);font-weight:500;display:block}
+.hero p.sub{margin:14px 0 22px;font-size:1.08rem;font-weight:300;opacity:.95;max-width:520px}
+.price{display:inline-flex;align-items:baseline;gap:8px;background:var(--oro);color:var(--verde);padding:10px 18px;border-radius:14px;
+  font-weight:800;box-shadow:0 10px 30px rgba(216,169,59,.4);animation:pulse 2.4s ease-in-out infinite}
+.price b{font-family:Fraunces,serif;font-size:2rem;font-weight:900}
+@keyframes pulse{50%{transform:translateY(-3px);box-shadow:0 16px 36px rgba(216,169,59,.6)}}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-block;text-decoration:none;font-weight:800;padding:15px 22px;border-radius:14px;border:0;cursor:pointer;font-size:1rem;font-family:Outfit;transition:transform .2s}
+.btn:active{transform:scale(.97)}
+.btn-wa{background:#25d366;color:#06301a}
+.btn-ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(6px)}
+.today{margin-top:22px;font-size:.9rem;opacity:.9;border-left:3px solid var(--oro);padding-left:10px}
+
+/* ---------- cinta ---------- */
+.ticker{background:var(--verde);color:var(--oro2);overflow:hidden;white-space:nowrap;padding:14px 0;border-top:1px solid rgba(255,255,255,.08)}
+.ticker div{display:inline-block;animation:tick 32s linear infinite;font-family:Fraunces,serif;font-size:1.25rem;font-style:italic}
+.ticker span{margin:0 22px}
+.ticker span:nth-child(odd){color:#fff;font-style:normal}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- secciones ---------- */
+section{padding:70px 20px}
+.wrap{max-width:1100px;margin:0 auto}
+.eyebrow{font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:.75rem;color:var(--azul)}
+h2{font-size:clamp(2.1rem,7vw,3.4rem);font-weight:900;margin:8px 0 14px;color:var(--verde)}
+.lead{font-size:1.08rem;max-width:620px;color:#3a4b42}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* incluye */
+.incl{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}
+@media(min-width:800px){.incl{grid-template-columns:repeat(4,1fr)}}
+.card{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;color:#fff;box-shadow:0 14px 34px rgba(15,59,42,.18)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.card:hover img{transform:scale(1.08)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(8,30,20,.92))}
+.card .t{position:absolute;left:14px;right:14px;bottom:14px;z-index:2}
+.card .n{font-family:Fraunces,serif;font-size:2.4rem;font-weight:900;color:var(--oro2);line-height:1}
+.card h3{font-size:1.25rem;margin-top:4px}
+.card p{font-size:.85rem;opacity:.85;margin-top:3px}
+
+/* carta */
+.carta{background:var(--verde);color:#fff;position:relative;overflow:hidden}
+.carta h2{color:#fff}
+.carta .eyebrow{color:var(--oro2)}
+.carta .lead{color:rgba(255,255,255,.85)}
+.carta-bg{position:absolute;inset:0;background:url(media/kiosco-palma.jpg) center/cover;opacity:.16}
+.menu{position:relative;display:grid;gap:12px;margin-top:26px}
+@media(min-width:800px){.menu{grid-template-columns:repeat(2,1fr)}}
+.dish{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px;border-radius:18px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(4px);transition:background .3s,transform .3s}
+.dish:hover{background:rgba(216,169,59,.18);transform:translateX(4px)}
+.dish h3{font-size:1.35rem}
+.dish p{font-size:.88rem;opacity:.75;margin-top:4px}
+.dish a{white-space:nowrap;font-weight:800;font-size:.85rem;color:var(--verde);background:var(--oro2);padding:9px 14px;border-radius:99px;text-decoration:none}
+
+/* espacios carrusel */
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px 20px 10px;margin:0 -20px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.spot{flex:0 0 78%;max-width:380px;scroll-snap-align:center;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 14px 34px rgba(15,59,42,.14)}
+@media(min-width:800px){.spot{flex-basis:32%}}
+.spot img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.spot div{padding:16px 18px 20px}
+.spot h3{font-size:1.3rem;color:var(--verde)}
+.spot p{font-size:.92rem;color:#4a5a51;margin-top:6px}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.dots i{width:8px;height:8px;border-radius:99px;background:#c9d3cc;transition:all .3s}
+.dots i.on{width:26px;background:var(--azul)}
+
+/* mosaico */
+.mosaic{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;gap:8px;margin-top:26px}
+@media(min-width:800px){.mosaic{grid-template-columns:repeat(4,1fr);grid-auto-rows:200px}}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:14px;cursor:zoom-in;transition:filter .3s,transform .3s}
+.mosaic img:hover{filter:saturate(1.25);transform:scale(.98)}
+.mosaic .big{grid-row:span 2}
+.mosaic .wide{grid-column:span 2}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:80;display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-height:90vh;border-radius:12px}
+.lb button{position:absolute;top:16px;right:16px;background:#fff;border:0;border-radius:99px;font:800 .85rem Outfit;padding:10px 16px;cursor:pointer}
+
+/* videos */
+.vids{display:grid;gap:14px;margin-top:26px}
+@media(min-width:800px){.vids{grid-template-columns:1fr 1.4fr;align-items:start}}
+.vbox{border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 40px rgba(0,0,0,.25);position:relative}
+.vbox video{width:100%;height:auto}
+.vbox .tag{position:absolute;top:12px;left:12px;background:var(--rojo);color:#fff;font-weight:800;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;padding:6px 10px;border-radius:99px;z-index:2}
+.vstack{display:grid;gap:14px}
+.vtall{max-height:640px}
+.vtall video{max-height:640px;margin:0 auto}
+
+/* calculadora */
+.calc{background:linear-gradient(135deg,var(--azul),#0d4f8a);color:#fff;border-radius:28px;padding:28px 22px;margin-top:10px;position:relative;overflow:hidden}
+.calc::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(76,195,239,.35);filter:blur(10px);animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translate(-30px,30px)}}
+.calc h2{color:#fff;position:relative}
+.calc .eyebrow{color:var(--oro2)}
+.fields{display:grid;gap:12px;margin-top:18px;position:relative}
+@media(min-width:700px){.fields{grid-template-columns:1fr 1fr}}
+label{font-weight:600;font-size:.85rem;display:block;margin-bottom:6px;opacity:.9}
+input,select{width:100%;padding:14px;border-radius:12px;border:0;font:500 1rem Outfit;color:var(--tinta);background:#fff}
+.stepper{display:flex;align-items:center;background:#fff;border-radius:12px;overflow:hidden}
+.stepper button{width:54px;height:50px;border:0;background:var(--oro2);color:var(--verde);font:900 1.4rem Outfit;cursor:pointer}
+.stepper output{flex:1;text-align:center;font:800 1.3rem Outfit;color:var(--verde)}
+.total{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-top:22px;padding-top:18px;border-top:1px dashed rgba(255,255,255,.4);position:relative}
+.total .v{font-family:Fraunces,serif;font-size:2.6rem;font-weight:900;color:var(--oro2);transition:transform .2s}
+.total .v.bump{transform:scale(1.12)}
+.small{font-size:.82rem;opacity:.85}
+
+/* ubicacion */
+.loc{display:grid;gap:16px;margin-top:22px}
+@media(min-width:800px){.loc{grid-template-columns:1.2fr 1fr;align-items:center}}
+.loc img{border-radius:22px;width:100%;aspect-ratio:9/12;object-fit:cover;box-shadow:0 18px 40px rgba(15,59,42,.25)}
+@media(min-width:800px){.loc img{aspect-ratio:4/3}}
+.addr{font-family:Fraunces,serif;font-size:1.6rem;color:var(--verde);font-weight:700}
+.phones{display:grid;gap:10px;margin-top:18px}
+.phone{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:16px;padding:16px 18px;text-decoration:none;box-shadow:0 8px 22px rgba(15,59,42,.1);transition:transform .2s}
+.phone:hover{transform:translateY(-2px)}
+.phone b{font-size:1.3rem;color:var(--verde)}
+.phone span{font-weight:800;font-size:.8rem;color:#fff;background:var(--verde);padding:7px 12px;border-radius:99px}
+.phone.wa span{background:#25d366;color:#06301a}
+
+/* eventos */
+.events{position:relative;border-radius:28px;overflow:hidden;color:#fff;min-height:380px;display:flex;align-items:flex-end}
+.events img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.events::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(10,40,28,.95))}
+.events div{position:relative;z-index:2;padding:26px}
+.events h2{color:#fff}
+
+footer{background:var(--tinta);color:rgba(255,255,255,.75);padding:40px 20px 110px;text-align:center;font-size:.9rem}
+footer b{color:var(--oro2)}
+footer a{color:#fff}
+
+/* boton flotante */
+.fab{position:fixed;left:16px;right:16px;bottom:14px;z-index:60;display:flex;gap:8px;transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.fab.on{transform:none}
+.fab a{flex:1;text-align:center;padding:16px;border-radius:16px;font-weight:800;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.fab .a1{background:#25d366;color:#06301a}
+.fab .a2{background:var(--oro);color:var(--verde);flex:0 0 auto;padding:16px 20px}
+@media(min-width:800px){.fab{left:auto;width:420px}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="brand" href="#inicio">La Villa <span>Soñada</span></a>
+  <div class="lang" role="group" aria-label="Idioma">
+    <button data-l="es" class="on">ES</button><button data-l="en">EN</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio" style="padding:0">
+  <video autoplay muted loop playsinline poster="media/hero-poster.jpg" preload="auto">
+    <source src="media/hero-dron.mp4" type="video/mp4">
+  </video>
+  <div class="hero-in">
+    <span class="kicker" data-i18n="kicker">Pasadía campestre · Km 5 vía Planeta Rica</span>
+    <h1>La Villa <em>Soñada</em></h1>
+    <p class="sub" data-i18n="sub">Piscina con cascada, almuerzo, kiosco de palma y juegos para toda la familia, entre árboles y a pocos minutos del pueblo.</p>
+    <div class="price"><b>$50.000</b> <span data-i18n="pp">por persona</span></div>
+    <div class="ctas">
+      <a class="btn btn-wa" id="waHero" href="#" target="_blank" rel="noopener" data-i18n="reservar">Reservar por WhatsApp</a>
+      <a class="btn btn-ghost" href="#espacios" data-i18n="ver">Ver la villa</a>
+    </div>
+    <p class="today" id="today"></p>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div id="tick"></div></div>
+
+<!-- INCLUYE -->
+<section id="pasadia">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="e1">El plan pasadía</span>
+    <h2 class="reveal" data-i18n="h1">Todo esto por $50.000</h2>
+    <p class="lead reveal" data-i18n="l1">Llega, deja el carro, quítate los zapatos y disfruta el día. El pasadía incluye:</p>
+    <div class="incl">
+      <article class="card reveal"><img src="media/kiosco-palma.jpg" alt="Kiosco de palma con mesas" loading="lazy"><div class="t"><div class="n">01</div><h3 data-i18n="i1">Almuerzo</h3><p data-i18n="i1p">Servido en el kiosco de palma</p></div></article>
+      <article class="card reveal"><img src="media/mecedoras.jpg" alt="Mecedoras de colores bajo la pérgola" loading="lazy"><div class="t"><div class="n">02</div><h3 data-i18n="i2">Gaseosa o jugo</h3><p data-i18n="i2p">Para acompañar el almuerzo</p></div></article>
+      <article class="card reveal"><img src="media/piscina-chorros.jpg" alt="Piscina con chorros de agua" loading="lazy"><div class="t"><div class="n">03</div><h3 data-i18n="i3">Ingreso a piscina</h3><p data-i18n="i3p">Con cascada y chorros de agua</p></div></article>
+      <article class="card reveal"><img src="media/ping-pong.jpg" alt="Mesa de ping-pong y trampolín" loading="lazy"><div class="t"><div class="n">04</div><h3 data-i18n="i4">Juegos y recreación</h3><p data-i18n="i4p">Ping-pong, billar, trampolín y parque infantil</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- CARTA -->
+<section class="carta" id="carta">
+  <div class="carta-bg"></div>
+  <div class="wrap" style="position:relative">
+    <span class="eyebrow reveal" data-i18n="e2">Otras opciones</span>
+    <h2 class="reveal" data-i18n="h2">De nuestra carta</h2>
+    <p class="lead reveal" data-i18n="l2">Además del pasadía, puedes pedir platos de la carta. Pregunta precios y disponibilidad por WhatsApp.</p>
+    <div class="menu">
+      <div class="dish reveal"><div><h3 data-i18n="d1">Bandeja costeña</h3><p data-i18n="d1p">El sabor de la casa</p></div><a href="#" class="ask" data-dish="Bandeja costeña" data-i18n="preg">Preguntar</a></div>
+      <div class="dish reveal"><div><h3 data-i18n="d2">Picadas personales</h3><p data-i18n="d2p">Para picar al lado de la piscina</p></div><a href="#" class="ask" data-dish="Picada personal" data-i18n="preg">Preguntar</a></div>
+      <div class="dish reveal"><div><h3 data-i18n="d3">Picadas familiares</h3><p data-i18n="d3p">Para compartir en grupo</p></div><a href="#" class="ask" data-dish="Picada familiar" data-i18n="preg">Preguntar</a></div>
+      <div class="dish reveal"><div><h3 data-i18n="d4">Menú infantil</h3><p data-i18n="d4p">Pensado para los niños</p></div><a href="#" class="ask" data-dish="Menú infantil" data-i18n="preg">Preguntar</a></div>
+      <div class="dish reveal"><div><h3 data-i18n="d5">Otros platos</h3><p data-i18n="d5p">Pregunta qué hay hoy en la carta</p></div><a href="#" class="ask" data-dish="la carta de hoy" data-i18n="preg">Preguntar</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPACIOS -->
+<section id="espacios">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="e3">Recorre la villa</span>
+    <h2 class="reveal" data-i18n="h3">Espacios para todo el día</h2>
+    <p class="lead reveal" data-i18n="l3">Desliza para conocer cada rincón.</p>
+    <div class="rail" id="rail">
+      <article class="spot"><img src="media/piscina-cascada.jpg" alt="" loading="lazy"><div><h3 data-i18n="s1">Piscina con cascada</h3><p data-i18n="s1p">Asoleadoras, sombrillas y chorros de agua para refrescarse.</p></div></article>
+      <article class="spot"><img src="media/kiosco-sonido.jpg" alt="" loading="lazy"><div><h3 data-i18n="s2">Kiosco de palma</h3><p data-i18n="s2p">Amplio, ventilado, con televisor y sonido.</p></div></article>
+      <article class="spot"><img src="media/billar.jpg" alt="" loading="lazy"><div><h3 data-i18n="s3">Salón de billar</h3><p data-i18n="s3p">Mesa de pool en un salón fresco con piso de granito.</p></div></article>
+      <article class="spot"><img src="media/ping-pong.jpg" alt="" loading="lazy"><div><h3 data-i18n="s4">Ping-pong y trampolín</h3><p data-i18n="s4p">Para retar a la familia mientras los niños saltan.</p></div></article>
+      <article class="spot"><img src="media/kiosco-mecedoras.jpg" alt="" loading="lazy"><div><h3 data-i18n="s5">Pérgola de mecedoras</h3><p data-i18n="s5p">Mecedoras de colores para descansar después del almuerzo.</p></div></article>
+      <article class="spot"><img src="media/jardin.jpg" alt="" loading="lazy"><div><h3 data-i18n="s6">Parque infantil y zonas verdes</h3><p data-i18n="s6p">Columpios, rodadero y prado para correr.</p></div></article>
+      <article class="spot"><img src="media/habitacion.jpg" alt="" loading="lazy"><div><h3 data-i18n="s7">Habitaciones</h3><p data-i18n="s7p">Pregunta por disponibilidad si quieres quedarte.</p></div></article>
+      <article class="spot"><img src="media/banos.jpg" alt="" loading="lazy"><div><h3 data-i18n="s8">Baños y vestier</h3><p data-i18n="s8p">Limpios y cerca de la piscina.</p></div></article>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos" style="background:#eaf3ee">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="e4">Videos reales</span>
+    <h2 class="reveal" data-i18n="h4">Míralo antes de venir</h2>
+    <div class="vids">
+      <div class="vbox vtall reveal"><span class="tag" data-i18n="tag1">Recorrido</span>
+        <video controls playsinline preload="metadata" poster="media/dron-aerea.jpg"><source src="media/recorrido.mp4" type="video/mp4"></video></div>
+      <div class="vstack">
+        <div class="vbox reveal"><span class="tag" data-i18n="tag2">Piscina</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="media/piscina-cascada.jpg"><source src="media/piscina.mp4" type="video/mp4"></video></div>
+        <div class="vbox reveal"><span class="tag" data-i18n="tag3">La casa</span>
+          <video controls playsinline preload="metadata" poster="media/sala-billar.jpg"><source src="media/recorrido-casa.mp4" type="video/mp4"></video></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="e5">Galería</span>
+    <h2 class="reveal" data-i18n="h5">Así se vive la villa</h2>
+    <div class="mosaic" id="mosaic">
+      <img class="big" src="media/piscina-sombrillas.jpg" alt="" loading="lazy">
+      <img src="media/dron-aerea.jpg" alt="" loading="lazy">
+      <img src="media/sala-billar.jpg" alt="" loading="lazy">
+      <img class="wide" src="media/kiosco-mecedoras.jpg" alt="" loading="lazy">
+      <img src="media/cocina.jpg" alt="" loading="lazy">
+      <img class="big" src="media/dron-via.jpg" alt="" loading="lazy">
+      <img src="media/fachada.jpg" alt="" loading="lazy">
+      <img src="media/jardin.jpg" alt="" loading="lazy">
+      <img class="wide" src="media/mecedoras.jpg" alt="" loading="lazy">
+    </div>
+  </div>
+</section>
+<div class="lb" id="lb"><button data-i18n="cerrar">Cerrar</button><img alt=""></div>
+
+<!-- CALCULADORA -->
+<section id="reserva">
+  <div class="wrap">
+    <div class="calc reveal">
+      <span class="eyebrow" data-i18n="e6">Arma tu pasadía</span>
+      <h2 data-i18n="h6">¿Cuántos vienen?</h2>
+      <div class="fields">
+        <div><label data-i18n="f1">Personas</label>
+          <div class="stepper"><button type="button" id="menos" aria-label="-">−</button><output id="n">4</output><button type="button" id="mas" aria-label="+">+</button></div></div>
+        <div><label for="fecha" data-i18n="f2">Fecha</label><input type="date" id="fecha"></div>
+        <div><label for="nombre" data-i18n="f3">Tu nombre</label><input id="nombre" autocomplete="name" placeholder="Nombre"></div>
+        <div><label for="extra" data-i18n="f4">¿Algo de la carta?</label>
+          <select id="extra">
+            <option value="" data-i18n="o0">Solo el pasadía</option>
+            <option value="Bandeja costeña" data-i18n="d1">Bandeja costeña</option>
+            <option value="Picadas familiares" data-i18n="d3">Picadas familiares</option>
+            <option value="Menú infantil" data-i18n="d4">Menú infantil</option>
+          </select></div>
+      </div>
+      <div class="total">
+        <div><div class="small" data-i18n="tot">Total del pasadía</div><div class="v" id="total">$200.000</div>
+          <div class="small" data-i18n="nota">Platos de la carta se cotizan aparte.</div></div>
+        <a class="btn btn-wa" id="waCalc" href="#" target="_blank" rel="noopener" data-i18n="enviar">Enviar reserva</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTOS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="events reveal">
+      <img src="media/kiosco-palma.jpg" alt="" loading="lazy">
+      <div>
+        <span class="eyebrow" style="color:var(--oro2)" data-i18n="e7">Grupos y celebraciones</span>
+        <h2 data-i18n="h7">¿Cumpleaños, paseo de empresa o reunión familiar?</h2>
+        <p style="margin:6px 0 18px;max-width:520px;opacity:.9" data-i18n="l7">El kiosco de palma tiene espacio, sonido y televisor. Escríbenos y te armamos el plan para tu grupo.</p>
+        <a class="btn btn-wa" id="waEvent" href="#" target="_blank" rel="noopener" data-i18n="cotizar">Cotizar mi evento</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACION -->
+<section id="ubicacion" style="padding-top:20px">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="e8">Cómo llegar</span>
+    <h2 class="reveal" data-i18n="h8">Te esperamos</h2>
+    <div class="loc">
+      <img class="reveal" src="media/dron-via.jpg" alt="Vista aérea de la villa junto a la vía" loading="lazy">
+      <div class="reveal">
+        <p class="addr" data-i18n="dir">Kilómetro 5 vía Planeta Rica, después del Club Paraguay de golf.</p>
+        <p class="small" style="margin-top:6px" data-i18n="park">Parqueadero en la villa · Cóctel de bienvenida: pregunta por él al reservar.</p>
+        <div class="phones">
+          <a class="phone wa" href="#" id="waTel1"><b>333 268 4771</b><span>WhatsApp</span></a>
+          <a class="phone" href="tel:+573332684771"><b>333 268 4771</b><span data-i18n="llamar">Llamar</span></a>
+          <a class="phone" href="tel:+573234235187"><b>323 423 5187</b><span data-i18n="llamar">Llamar</span></a>
+        </div>
+        <a class="btn" style="background:var(--verde);color:#fff;margin-top:14px;width:100%;text-align:center" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Club+Paraguay+de+golf+v%C3%ADa+Planeta+Rica+Caucasia" data-i18n="mapa">Abrir en Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b>La Villa Soñada</b> · <span data-i18n="foot">Pasadía campestre</span></p>
+  <p style="margin-top:10px" data-i18n="hecho">App hecha por</p>
+  <p><a href="https://vibraspositivashm.com" target="_blank" rel="noopener">Vibras Positivas HM</a> · 311 770 0431</p>
+</footer>
+
+<div class="fab" id="fab">
+  <a class="a1" id="waFab" href="#" target="_blank" rel="noopener" data-i18n="reservar">Reservar por WhatsApp</a>
+  <a class="a2" href="tel:+573332684771" data-i18n="llamar">Llamar</a>
+</div>
+
+<script>
+const WA = "573332684771";
+const PRECIO = 50000;
+const T = {
+ es:{kicker:"Pasadía campestre · Km 5 vía Planeta Rica",sub:"Piscina con cascada, almuerzo, kiosco de palma y juegos para toda la familia, entre árboles y a pocos minutos del pueblo.",pp:"por persona",reservar:"Reservar por WhatsApp",ver:"Ver la villa",
+  e1:"El plan pasadía",h1:"Todo esto por $50.000",l1:"Llega, deja el carro, quítate los zapatos y disfruta el día. El pasadía incluye:",
+  i1:"Almuerzo",i1p:"Servido en el kiosco de palma",i2:"Gaseosa o jugo",i2p:"Para acompañar el almuerzo",i3:"Ingreso a piscina",i3p:"Con cascada y chorros de agua",i4:"Juegos y recreación",i4p:"Ping-pong, billar, trampolín y parque infantil",
+  e2:"Otras opciones",h2:"De nuestra carta",l2:"Además del pasadía, puedes pedir platos de la carta. Pregunta precios y disponibilidad por WhatsApp.",
+  d1:"Bandeja costeña",d1p:"El sabor de la casa",d2:"Picadas personales",d2p:"Para picar al lado de la piscina",d3:"Picadas familiares",d3p:"Para compartir en grupo",d4:"Menú infantil",d4p:"Pensado para los niños",d5:"Otros platos",d5p:"Pregunta qué hay hoy en la carta",preg:"Preguntar",
+  e3:"Recorre la villa",h3:"Espacios para todo el día",l3:"Desliza para conocer cada rincón.",
+  s1:"Piscina con cascada",s1p:"Asoleadoras, sombrillas y chorros de agua para refrescarse.",s2:"Kiosco de palma",s2p:"Amplio, ventilado, con televisor y sonido.",s3:"Salón de billar",s3p:"Mesa de pool en un salón fresco con piso de granito.",s4:"Ping-pong y trampolín",s4p:"Para retar a la familia mientras los niños saltan.",s5:"Pérgola de mecedoras",s5p:"Mecedoras de colores para descansar después del almuerzo.",s6:"Parque infantil y zonas verdes",s6p:"Columpios, rodadero y prado para correr.",s7:"Habitaciones",s7p:"Pregunta por disponibilidad si quieres quedarte.",s8:"Baños y vestier",s8p:"Limpios y cerca de la piscina.",
+  e4:"Videos reales",h4:"Míralo antes de venir",tag1:"Recorrido",tag2:"Piscina",tag3:"La casa",e5:"Galería",h5:"Así se vive la villa",cerrar:"Cerrar",
+  e6:"Arma tu pasadía",h6:"¿Cuántos vienen?",f1:"Personas",f2:"Fecha",f3:"Tu nombre",f4:"¿Algo de la carta?",o0:"Solo el pasadía",tot:"Total del pasadía",nota:"Platos de la carta se cotizan aparte.",enviar:"Enviar reserva",
+  e7:"Grupos y celebraciones",h7:"¿Cumpleaños, paseo de empresa o reunión familiar?",l7:"El kiosco de palma tiene espacio, sonido y televisor. Escríbenos y te armamos el plan para tu grupo.",cotizar:"Cotizar mi evento",
+  e8:"Cómo llegar",h8:"Te esperamos",dir:"Kilómetro 5 vía Planeta Rica, después del Club Paraguay de golf.",park:"Parqueadero en la villa · Cóctel de bienvenida: pregunta por él al reservar.",llamar:"Llamar",mapa:"Abrir en Google Maps",foot:"Pasadía campestre",hecho:"App hecha por",
+  ticker:["Piscina con cascada","Almuerzo incluido","Kiosco de palma","Billar","Ping-pong","Trampolín","Parque infantil","Mecedoras","Bandeja costeña","$50.000 por persona"],
+  hoy:(d,f)=>`Hoy es ${d}. Próximo fin de semana: ${f}. Aparta tu cupo.`,
+  msg:(n,f,nom,x)=>`Hola, quiero reservar el pasadía en La Villa Soñada.\nNombre: ${nom||"-"}\nPersonas: ${n}\nFecha: ${f||"por definir"}\nTotal pasadía: ${x}`,
+  msgX:e=>`\nTambién me interesa: ${e}`, msgAsk:d=>`Hola, quiero saber el precio de ${d} en La Villa Soñada.`,
+  msgEv:"Hola, quiero cotizar un evento en La Villa Soñada.", msgGen:"Hola, quiero información del pasadía en La Villa Soñada ($50.000 por persona)."},
+ en:{kicker:"Countryside day pass · Km 5, Planeta Rica road",sub:"A pool with a waterfall, lunch, a palm-thatched lounge and games for the whole family, among the trees and minutes from town.",pp:"per person",reservar:"Book on WhatsApp",ver:"See the villa",
+  e1:"The day pass",h1:"All this for COP 50,000",l1:"Arrive, park, kick off your shoes and enjoy the day. The day pass includes:",
+  i1:"Lunch",i1p:"Served in the palm-thatched lounge",i2:"Soda or juice",i2p:"To go with your lunch",i3:"Pool access",i3p:"With a waterfall and water jets",i4:"Games and fun",i4p:"Ping-pong, pool table, trampoline and playground",
+  e2:"More options",h2:"From our menu",l2:"Besides the day pass, you can order dishes from the menu. Ask for prices and availability on WhatsApp.",
+  d1:"Bandeja costeña",d1p:"Our Caribbean house platter",d2:"Personal snack platters",d2p:"To nibble by the pool",d3:"Family snack platters",d3p:"To share with the group",d4:"Kids' menu",d4p:"Made for the little ones",d5:"Other dishes",d5p:"Ask what's on the menu today",preg:"Ask",
+  e3:"Tour the villa",h3:"Spaces for the whole day",l3:"Swipe to see every corner.",
+  s1:"Pool with waterfall",s1p:"Loungers, umbrellas and water jets to cool off.",s2:"Palm-thatched lounge",s2p:"Spacious and airy, with TV and sound.",s3:"Billiards room",s3p:"A pool table in a cool room with granite floors.",s4:"Ping-pong and trampoline",s4p:"Challenge the family while the kids jump.",s5:"Rocking-chair pergola",s5p:"Colorful rocking chairs to rest after lunch.",s6:"Playground and gardens",s6p:"Swings, a slide and lawn to run on.",s7:"Bedrooms",s7p:"Ask about availability if you want to stay.",s8:"Restrooms and changing rooms",s8p:"Clean and close to the pool.",
+  e4:"Real videos",h4:"See it before you come",tag1:"Tour",tag2:"Pool",tag3:"The house",e5:"Gallery",h5:"Life at the villa",cerrar:"Close",
+  e6:"Plan your day",h6:"How many are coming?",f1:"People",f2:"Date",f3:"Your name",f4:"Anything from the menu?",o0:"Just the day pass",tot:"Day pass total",nota:"Menu dishes are quoted separately.",enviar:"Send booking",
+  e7:"Groups and celebrations",h7:"Birthday, company outing or family gathering?",l7:"The palm-thatched lounge has room, sound and a TV. Message us and we'll put together a plan for your group.",cotizar:"Get a quote",
+  e8:"Getting here",h8:"We're waiting for you",dir:"Kilometer 5 on the Planeta Rica road, past the Paraguay golf club.",park:"Parking at the villa · Welcome cocktail: ask about it when you book.",llamar:"Call",mapa:"Open in Google Maps",foot:"Countryside day pass",hecho:"App made by",
+  ticker:["Pool with waterfall","Lunch included","Palm-thatched lounge","Billiards","Ping-pong","Trampoline","Playground","Rocking chairs","Bandeja costeña","COP 50,000 per person"],
+  hoy:(d,f)=>`Today is ${d}. Next weekend: ${f}. Save your spot.`,
+  msg:(n,f,nom,x)=>`Hi, I'd like to book the day pass at La Villa Soñada.\nName: ${nom||"-"}\nPeople: ${n}\nDate: ${f||"to be confirmed"}\nDay pass total: ${x}`,
+  msgX:e=>`\nI'm also interested in: ${e}`, msgAsk:d=>`Hi, I'd like to know the price of ${d} at La Villa Soñada.`,
+  msgEv:"Hi, I'd like a quote for an event at La Villa Soñada.", msgGen:"Hi, I'd like information about the day pass at La Villa Soñada (COP 50,000 per person)."}
+};
+let L = localStorageGet() || ((navigator.language||"es").startsWith("en")?"en":"es");
+function localStorageGet(){try{return localStorage.getItem("vs-lang")}catch(e){return null}}
+function localStorageSet(v){try{localStorage.setItem("vs-lang",v)}catch(e){}}
+const $ = s=>document.querySelector(s), $$ = s=>document.querySelectorAll(s);
+const money = v => "$" + v.toLocaleString("es-CO");
+const wa = t => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+const TZ = "America/Bogota";
+
+function hoyCol(){
+  const now = new Date();
+  const fmt = new Intl.DateTimeFormat(L==="en"?"en-US":"es-CO",{timeZone:TZ,weekday:"long",day:"numeric",month:"long"});
+  const dow = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(new Intl.DateTimeFormat("en-US",{timeZone:TZ,weekday:"short"}).format(now));
+  const add = dow===6?7:(6-dow);
+  const sat = new Date(now.getTime()+add*864e5);
+  return [fmt.format(now), new Intl.DateTimeFormat(L==="en"?"en-US":"es-CO",{timeZone:TZ,weekday:"long",day:"numeric",month:"long"}).format(sat), sat];
+}
+function setLang(l){
+  L=l; localStorageSet(l); document.documentElement.lang=l;
+  $$("[data-i18n]").forEach(el=>{const v=T[l][el.dataset.i18n]; if(typeof v==="string") el.textContent=v;});
+  $$(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===l));
+  const items=T[l].ticker.map(t=>`<span>${t}</span>`).join(""); $("#tick").innerHTML=items+items;
+  const [d,f]=hoyCol(); $("#today").textContent=T[l].hoy(d,f);
+  $("#nombre").placeholder = l==="en"?"Name":"Nombre";
+  links(); calc();
+}
+function links(){
+  ["#waHero","#waFab","#waTel1"].forEach(s=>$(s).href=wa(T[L].msgGen));
+  $("#waEvent").href=wa(T[L].msgEv);
+  $$(".ask").forEach(a=>a.href=wa(T[L].msgAsk(a.dataset.dish)));
+  $$(".ask").forEach(a=>{a.target="_blank";a.rel="noopener"});
+}
+let n=4;
+function calc(){
+  $("#n").textContent=n;
+  const tot=n*PRECIO, el=$("#total"); el.textContent=money(tot);
+  el.classList.add("bump"); setTimeout(()=>el.classList.remove("bump"),200);
+  const fv=$("#fecha").value;
+  const fecha = fv ? new Intl.DateTimeFormat(L==="en"?"en-US":"es-CO",{weekday:"long",day:"numeric",month:"long",timeZone:"UTC"}).format(new Date(fv+"T12:00:00Z")) : "";
+  let m=T[L].msg(n,fecha,$("#nombre").value.trim(),money(tot));
+  if($("#extra").value) m+=T[L].msgX($("#extra").value);
+  $("#waCalc").href=wa(m);
+}
+$("#menos").onclick=()=>{if(n>1){n--;calc()}};
+$("#mas").onclick=()=>{if(n<200){n++;calc()}};
+["#fecha","#nombre","#extra"].forEach(s=>$(s).addEventListener("input",calc));
+$$(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+
+// fecha mínima = hoy en Colombia; sugerir el próximo sábado
+(function(){const p=new Intl.DateTimeFormat("en-CA",{timeZone:TZ}).format(new Date()); $("#fecha").min=p;
+  const sat=hoyCol()[2]; $("#fecha").value=new Intl.DateTimeFormat("en-CA",{timeZone:TZ}).format(sat);})();
+
+// barra superior y botón flotante
+const bar=$("#top"), fab=$("#fab");
+addEventListener("scroll",()=>{const y=scrollY; bar.classList.toggle("solid",y>60); fab.classList.toggle("on",y>innerHeight*.7 && (innerHeight+y)<document.body.scrollHeight-260);},{passive:true});
+
+// aparecer al hacer scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+$$(".reveal").forEach((el,i)=>{el.style.transitionDelay=(i%4)*90+"ms";io.observe(el)});
+
+// carrusel con puntos y avance automático
+const rail=$("#rail"), spots=[...rail.children], dots=$("#dots");
+spots.forEach(()=>dots.appendChild(document.createElement("i")));
+function activeDot(){const i=Math.round(rail.scrollLeft/(spots[0].offsetWidth+14)); [...dots.children].forEach((d,k)=>d.classList.toggle("on",k===Math.min(i,spots.length-1)));}
+rail.addEventListener("scroll",activeDot,{passive:true}); activeDot();
+let auto=setInterval(()=>{const w=spots[0].offsetWidth+14; rail.scrollTo({left: rail.scrollLeft+w>=rail.scrollWidth-rail.clientWidth+5?0:rail.scrollLeft+w,behavior:"smooth"})},3800);
+rail.addEventListener("touchstart",()=>clearInterval(auto),{passive:true});
+rail.addEventListener("mouseenter",()=>clearInterval(auto));
+
+// galería ampliada
+const lb=$("#lb");
+$$("#mosaic img").forEach(img=>img.onclick=()=>{lb.querySelector("img").src=img.src;lb.classList.add("on")});
+lb.onclick=()=>lb.classList.remove("on");
+
+// pausar videos fuera de pantalla
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target; if(!e.isIntersecting && !v.paused) v.pause(); else if(e.isIntersecting && v.muted && v.loop) v.play().catch(()=>{});}),{threshold:.2});
+$$("video").forEach(v=>vio.observe(v));
+
+setLang(L);
+if("serviceWorker" in navigator) addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script>
+</body>
+</html>

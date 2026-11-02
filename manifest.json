@@ -1,0 +1,15 @@
+{
+  "name": "La Villa Soñada · Pasadía",
+  "short_name": "Villa Soñada",
+  "description": "Pasadía campestre: almuerzo, bebida, piscina y zona de juegos por $50.000 por persona.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f3b2a",
+  "theme_color": "#0f3b2a",
+  "lang": "es",
+  "icons": [
+    { "src": "media/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "media/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
