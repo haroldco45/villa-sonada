@@ -1,4 +1,4 @@
-const CACHE = "villa-sonada-v2";
+const CACHE = "villa-sonada-v3";
 const CORE = ["./", "index.html", "manifest.json", "media/hero-poster.jpg", "media/icon-192.png"];
 
 self.addEventListener("install", e => {
